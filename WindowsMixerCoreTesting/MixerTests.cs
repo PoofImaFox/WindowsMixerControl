@@ -12,6 +12,17 @@ using Xunit;
 namespace WindowsMixerCoreTesting {
     public class MixerTests {
         [Fact]
+        public void TestSetVolume() {
+            var devices = WindowsMixer.FindAllDevices(MixerLineInfoComponentType.Wavein);
+
+            foreach (var device in devices) {
+                var volumeControl = device.MixerDestinationDeviceControls.Single(i => i.ControlType == MixerControlType.Volume);
+                var currentVolume = volumeControl.GetUnSignedValue();
+                volumeControl.SetValue(currentVolume);
+            }
+        }
+
+        [Fact]
         public void TestMuteDevices() {
             var deviceComponent = MixerLineInfoComponentType.Wavein;
 
@@ -21,6 +32,7 @@ namespace WindowsMixerCoreTesting {
             WindowsMixer.UnMuteAllDevices(deviceComponent);
             AssertAllMuteValues(deviceComponent, false);
         }
+
         private void AssertAllMuteValues(MixerLineInfoComponentType deviceComponent, bool value) {
             var microphones = WindowsMixer.FindAllDevices(deviceComponent).ToArray();
 

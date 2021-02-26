@@ -50,7 +50,7 @@ namespace WindowsMixerControl {
 
         public void SetValue(uint unsignedValue) {
             var memortPtr = NativeMemory.WriteStructToMemory(new MixerControlDetailsUnSigned() {
-                value = unsignedValue
+                value = unsignedValue > MaximumValue ? MaximumValue : unsignedValue
             });
 
             SetValue(memortPtr);
@@ -58,7 +58,7 @@ namespace WindowsMixerControl {
 
         public void SetValue(int signedValue) {
             var memortPtr = NativeMemory.WriteStructToMemory(new MixerControlDetailsSigned() {
-                value = signedValue
+                value = signedValue > (int)MaximumValue ? (int)MaximumValue : signedValue
             });
 
             SetValue(memortPtr);
@@ -89,6 +89,9 @@ namespace WindowsMixerControl {
                 ref controlInformation, (uint)MixerDeviceAccessFlag.HMixer | (uint)controlFlag);
 
             WindowsMixer.SetLastError(response);
+
+            // We no longer need this heap region.
+            NativeMethods.Free(NativeMemory.HeapHandle, MallocMemoryFlags.Empty, controlInformation.detailsStruct.ToPointer());
         }
 
         public bool GetToggleValue() {
