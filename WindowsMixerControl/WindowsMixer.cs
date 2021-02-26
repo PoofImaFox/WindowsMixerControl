@@ -11,23 +11,20 @@ using WindowsMixerControl.MixerStructs;
 namespace WindowsMixerControl {
     public static class WindowsMixer {
         public static void MuteAllDevices(MixerLineInfoComponentType componentType) {
-            var microphones = FindAllDevices(componentType).ToArray();
-
-            foreach (var microphone in microphones) {
-                if (microphone.MixerSourceDeviceControls.Any(i => i.ControlType == MixerControlType.Mute)) {
-                    var muteControl = microphone.MixerSourceDeviceControls.Single(i => i.ControlType == MixerControlType.Mute);
-                    muteControl.SetValue(true);
-                }
-            }
+            ToggleMuteControl(componentType, true);
         }
 
         public static void UnMuteAllDevices(MixerLineInfoComponentType componentType) {
+            ToggleMuteControl(componentType, false);
+        }
+
+        public static void ToggleMuteControl(MixerLineInfoComponentType componentType, bool toggle) {
             var microphones = FindAllDevices(componentType).ToArray();
 
             foreach (var microphone in microphones) {
                 if (microphone.MixerSourceDeviceControls.Any(i => i.ControlType == MixerControlType.Mute)) {
                     var muteControl = microphone.MixerSourceDeviceControls.Single(i => i.ControlType == MixerControlType.Mute);
-                    muteControl.SetValue(false);
+                    muteControl.SetValue(toggle);
                 }
             }
         }
