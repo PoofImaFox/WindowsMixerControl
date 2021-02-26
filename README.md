@@ -10,11 +10,11 @@ Mute all input devices;
 
 Enumerate all Input devices;
 ```cs
-var deviceComponent = MixerLineInfoComponentType.Wavein;
-var inputDevices = WindowsMixer.FindAllDevices(deviceComponent).ToArray();
+	var deviceComponent = MixerLineInfoComponentType.Wavein;
+	var inputDevices = WindowsMixer.FindAllDevices(deviceComponent).ToArray();
 
-var deviceEnumeration = string.Join("\n", inputDevices.Select(i =>
-     i.SourceMixerLineInfo.target.productName));
+	var deviceEnumeration = string.Join("\n", inputDevices.Select(i =>
+     		i.SourceMixerLineInfo.target.productName));
 
-Console.WriteLine(deviceEnumeration);
+	Console.WriteLine(deviceEnumeration);
 ```
