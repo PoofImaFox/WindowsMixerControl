@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMixerControl", "WindowsMixerControl\WindowsMixerControl.csproj", "{1D332AE0-1FD5-4D9C-84EE-1EB0EE33000B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMixerCoreTesting", "WindowsMixerCoreTesting\WindowsMixerCoreTesting.csproj", "{F82B7B5B-C432-4A3F-A79F-FAB9B4588750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMixerFrameworkTesting", "WindowsMixerFrameworkTesting\WindowsMixerFrameworkTesting.csproj", "{B183EFF6-D88F-46D3-98FA-3477554FC7AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D332AE0-1FD5-4D9C-84EE-1EB0EE33000B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D332AE0-1FD5-4D9C-84EE-1EB0EE33000B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D332AE0-1FD5-4D9C-84EE-1EB0EE33000B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D332AE0-1FD5-4D9C-84EE-1EB0EE33000B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82B7B5B-C432-4A3F-A79F-FAB9B4588750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82B7B5B-C432-4A3F-A79F-FAB9B4588750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82B7B5B-C432-4A3F-A79F-FAB9B4588750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82B7B5B-C432-4A3F-A79F-FAB9B4588750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B183EFF6-D88F-46D3-98FA-3477554FC7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B183EFF6-D88F-46D3-98FA-3477554FC7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B183EFF6-D88F-46D3-98FA-3477554FC7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B183EFF6-D88F-46D3-98FA-3477554FC7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFF99AA9-34D0-4D24-B888-3E0D743E9D66}
+	EndGlobalSection
+EndGlobal
